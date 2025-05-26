@@ -22,7 +22,7 @@ export default function Inicio() {
           <Text style={styles.boxText}>Categorías</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.box}>
-          <Text style={styles.boxText}></Text>
+          <Text style={styles.boxText}>Supermercados</Text>
         </TouchableOpacity>
       </View>
     </View>
