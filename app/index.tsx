@@ -1,8 +1,11 @@
 import { View, Text, StyleSheet, Image, TouchableOpacity, Dimensions } from 'react-native';
+import { useRouter } from 'expo-router';
 
 const boxSize = Dimensions.get('window').width * 0.35;
 
-export default function Inicio() {
+export default function InicioScreen() {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       <Image
@@ -12,16 +15,23 @@ export default function Inicio() {
       />
 
       <View style={styles.grid}>
-        <TouchableOpacity style={styles.box}>
+        <TouchableOpacity style={styles.box} activeOpacity={0.7}>
           <Text style={styles.boxText}>Mi lista</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.box}>
+
+        <TouchableOpacity style={styles.box} activeOpacity={0.7}>
           <Text style={styles.boxText}>Ofertas</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.box}>
+
+        <TouchableOpacity
+          style={styles.box}
+          activeOpacity={0.7}
+          onPress={() => router.push('/categorias')}
+        >
           <Text style={styles.boxText}>Categorías</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.box}>
+
+        <TouchableOpacity style={styles.box} activeOpacity={0.7}>
           <Text style={styles.boxText}>Supermercados</Text>
         </TouchableOpacity>
       </View>
