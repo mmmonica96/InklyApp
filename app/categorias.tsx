@@ -1,4 +1,4 @@
-import { useState } from 'react'; 
+import { useState } from 'react';
 import {
   View,
   Text,
@@ -20,10 +20,17 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Zumo melocotón', image: require('../assets/images/bebidas/zumo-melocoton.png') },
     { name: 'Aquarius limón', image: require('../assets/images/bebidas/aquarius-limon.png') },
   ],
+  'Arroz, legumbres y pastas': [
+    { name: 'Arroz', image: require('../assets/images/arroz/arroz.jpg') },
+    { name: 'Arroz Basmati', image: require('../assets/images/arroz/basmati.jpg') },
+    { name: 'Garbanzos', image: require('../assets/images/legumbres/garbanzos.jpg') },
+    { name: 'Pedrosillano', image: require('../assets/images/legumbres/pedrosillano.jpg') },
+    { name: 'Dinos', image: require('../assets/images/pastas/dinos.jpg') },
+    { name: 'Tagliatelle', image: require('../assets/images/pastas/tagliatelle.jpg') },
+  ],
 };
 
 export default function CategoriasScreen() {
-<<<<<<< HEAD
   const [selectedCategory, setSelectedCategory] = useState('Bebidas');
   const [checkedItems, setCheckedItems] = useState<{ [key: string]: boolean }>({});
 
@@ -33,10 +40,6 @@ export default function CategoriasScreen() {
       [productName]: !prev[productName],
     }));
   };
-=======
-  const [showBebidas, setShowBebidas] = useState(false);
-  const [showAlp, setShowAlp] = useState(false); 
->>>>>>> origin/monica
 
   return (
     <View style={styles.container}>
@@ -48,7 +51,6 @@ export default function CategoriasScreen() {
 
       <Text style={styles.title}>Categorías</Text>
 
-<<<<<<< HEAD
       <View style={styles.content}>
         {/* Panel lateral */}
         <View style={styles.sidebar}>
@@ -93,128 +95,6 @@ export default function CategoriasScreen() {
                 </View>
               </View>
             ))}
-=======
-      <View style={styles.categoryList}>
-        {/*Arroz, legumbres y pastas */}
-        <TouchableOpacity
-          onPress={() => setShowAlp(!showAlp)}
-          style={styles.button}
-        >
-          <Text style={styles.buttonText}>Arroz, legumbres y pastas</Text>
-        </TouchableOpacity>
-
-        {showAlp && (
-          <View style={styles.imageRow}>
-            <View style={styles.imageItem}>
-              <Image
-                source={require('../assets/images/arroz/arroz.jpg')}
-                style={styles.productImage}
-              />
-              <Text style={styles.imageLabel}>Arroz redondo</Text>
-            </View>
-
-            <View style={styles.imageItem}>
-              <Image
-                source={require('../assets/images/arroz/basmati.jpg')}
-                style={styles.productImage}
-              />
-              <Text style={styles.imageLabel}>Arroz basmati</Text>
-            </View>
-
-            <View style={styles.imageItem}>
-              <Image
-                source={require('../assets/images/legumbres/garbanzos.jpg')}
-                style={styles.productImage}
-              />
-              <Text style={styles.imageLabel}>Garbanzo cocido</Text>
-            </View>
-
-            <View style={styles.imageItem}>
-              <Image
-                source={require('../assets/images/legumbres/pedrosillano.jpg')}
-                style={styles.productImage}
-              />
-              <Text style={styles.imageLabel}>Garbanzo pedrosillano</Text>
-            </View>
-
-            <View style={styles.imageItem}>
-              <Image
-                source={require('../assets/images/pastas/tagliatelle.jpg')}
-                style={styles.productImage}
-              />
-              <Text style={styles.imageLabel}>Tagliatelle al huevo</Text>
-            </View>
-
-            <View style={styles.imageItem}>
-              <Image
-                source={require('../assets/images/pastas/dinos.jpg')}
-                style={styles.productImage}
-              />
-              <Text style={styles.imageLabel}>Pasta Dinos vegetales para sopa</Text>
-            </View>
-          </View>
-        )}
-
-        {/* Categoría: Bebidas */}
-        <TouchableOpacity
-          onPress={() => setShowBebidas(!showBebidas)}
-          style={styles.button}
-        >
-          <Text style={styles.buttonText}>Bebidas</Text>
-        </TouchableOpacity>
-
-        {showBebidas && (
-          <View>
-            <View style={styles.imageRow}>
-              <View style={styles.imageItem}>
-                <Image
-                  source={require('../assets/images/bebidas/agua.png')}
-                  style={styles.productImage}
-                />
-                <Text style={styles.imageLabel}>Agua</Text>
-              </View>
-
-              <View style={styles.imageItem}>
-                <Image
-                  source={require('../assets/images/bebidas/coca-cola.png')}
-                  style={styles.productImage}
-                />
-                <Text style={styles.imageLabel}>Coca-Cola</Text>
-              </View>
-              
-              <View style={styles.imageItem}>
-                <Image
-                  source={require('../assets/images/bebidas/cerveza.png')}
-                  style={styles.productImage}
-                />
-                <Text style={styles.imageLabel}>Cerveza</Text>
-              </View>
-
-              <View style={styles.imageItem}>
-                <Image
-                  source={require('../assets/images/bebidas/cerveza.png')}
-                  style={styles.productImage}
-                />
-                <Text style={styles.imageLabel}>Coca-Cola</Text>
-              </View>
-
-              <View style={styles.imageItem}>
-                <Image
-                  source={require('../assets/images/bebidas/coca-cola.png')}
-                  style={styles.productImage}
-                />
-                <Text style={styles.imageLabel}>Coca-Cola</Text>
-              </View>
-
-              <View style={styles.imageItem}>
-                <Image
-                  source={require('../assets/images/bebidas/coca-cola.png')}
-                  style={styles.productImage}
-                />
-                <Text style={styles.imageLabel}>Coca-Cola</Text>
-              </View>
-            </View>
->>>>>>> origin/monica
           </View>
         </ScrollView>
       </View>
@@ -241,12 +121,6 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     flexDirection: 'row',
-<<<<<<< HEAD
-=======
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    marginTop: 10,
->>>>>>> origin/monica
   },
   sidebar: {
     flex: 0.2,
@@ -255,11 +129,6 @@ const styles = StyleSheet.create({
   sidebarContent: {
     paddingVertical: 10,
     alignItems: 'center',
-<<<<<<< HEAD
-=======
-    margin: 10,
-    width: 120,
->>>>>>> origin/monica
   },
   categoryButton: {
     paddingVertical: 10,
