@@ -51,22 +51,9 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
   ],
   'Cuidado facial y corporal': [],
   'Fitoterapia y parafarmacia': [
-    { name: 'Infusión de manzanilla', image: require('../assets/images/parafarmacia/manzanilla.png') },
-    { name: 'Infusión de valeriana', image: require('../assets/images/parafarmacia/valeriana.png') },
-    { name: 'Té de hierba luisa', image: require('../assets/images/parafarmacia/hierba-luisa.png') },
-    { name: 'Gasas estériles', image: require('../assets/images/parafarmacia/gasas.png') },
-    { name: 'Agua oxigenada', image: require('../assets/images/parafarmacia/agua-oxigenada.png') },
-    { name: 'Betadine', image: require('../assets/images/parafarmacia/betadine.png') },
   ],
   'Limpieza y hogar': [],
-  Mascotas: [
-    { name: 'Pienso seco para perros', image: require('../assets/images/mascotas/pienso-perro.png') },
-    { name: 'Pienso seco para gatos', image: require('../assets/images/mascotas/pienso-gato.png') },
-    { name: 'Snacks dentales', image: require('../assets/images/mascotas/snacks-dentales.png') },
-    { name: 'Galletas para perros', image: require('../assets/images/mascotas/galletas.png') },
-    { name: 'Arena para gatos', image: require('../assets/images/mascotas/arena.png') },
-    { name: 'Champú para mascotas', image: require('../assets/images/mascotas/champu.png') },
-  ],
+  Mascotas: []
 };
 
 export default function CategoriasScreen() {
