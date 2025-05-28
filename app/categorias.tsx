@@ -11,10 +11,14 @@ import {
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
+<<<<<<< HEAD
 const CATEGORIES = [
   'Arroz, legumbres y pastas', 'Bebidas', 'Bebe', 'Cuidado del cabello',
   'Cuidado facial y corporal', 'Fitoterapia y parafarmacia', 'Limpieza y hogar', 'Mascotas',
 ];
+=======
+const CATEGORIES = ['Arroz, legumbres y pastas', 'Bebidas', 'Bebé'];
+>>>>>>> origin/monica
 
 const PRODUCTS: Record<string, { name: string; image: any }[]> = {
   'Arroz, legumbres y pastas': [
@@ -25,7 +29,11 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Dinos', image: require('../assets/images/pastas/dinos.jpg') },
     { name: 'Tagliatelle', image: require('../assets/images/pastas/tagliatelle.jpg') },
   ],
+<<<<<<< HEAD
   Bebidas: [
+=======
+  'Bebidas': [
+>>>>>>> origin/monica
     { name: 'Agua', image: require('../assets/images/bebidas/agua.png') },
     { name: 'Coca-Cola', image: require('../assets/images/bebidas/coca-cola.png') },
     { name: 'Cerveza', image: require('../assets/images/bebidas/cerveza.png') },
@@ -33,6 +41,7 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Zumo melocotón', image: require('../assets/images/bebidas/zumo-melocoton.png') },
     { name: 'Aquarius limón', image: require('../assets/images/bebidas/aquarius-limon.png') },
   ],
+<<<<<<< HEAD
   Bebe: [],
   'Cuidado del cabello': [
     { name: 'Champú hidratante', image: require('../assets/images/cabello/shampoo.png') },
@@ -59,6 +68,15 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Galletas para perros', image: require('../assets/images/mascotas/galletas.png') },
     { name: 'Arena para gatos', image: require('../assets/images/mascotas/arena.png') },
     { name: 'Champú para mascotas', image: require('../assets/images/mascotas/champu.png') },
+=======
+  'Bebé': [
+    { name: 'Papilla verduritas con merluza Hero Solo +6 meses', image: require('../assets/images/bebe/papilla.jpg') },
+    { name: 'Preparado lácteo crecimiento +1 año', image: require('../assets/images/bebe/preparado.jpg') },
+    { name: 'Leche de continuación en polvo 2 Nativa Nestlé +6 meses', image: require('../assets/images/bebe/leche.jpg') },
+    { name: 'Papilla 8 cereales Hero Solo +6 meses 0% azúcares añadidos', image: require('../assets/images/bebe/cereales.jpg') },
+    { name: 'Chupete silicona reversible +0 a 6 meses', image: require('../assets/images/bebe/chupete.jpg') },
+    { name: 'Biberón 150 ml tetina silicona flujo lento +0 meses', image: require('../assets/images/bebe/biberon.jpg') },
+>>>>>>> origin/monica
   ],
 };
 
