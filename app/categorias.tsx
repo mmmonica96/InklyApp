@@ -9,17 +9,9 @@ import {
   Switch,
 } from 'react-native';
 
-const CATEGORIES = ['Arroz, legumbres y pastas', 'Bebidas'];
+const CATEGORIES = ['Arroz, legumbres y pastas', 'Bebidas', 'Bebé'];
 
 const PRODUCTS: Record<string, { name: string; image: any }[]> = {
-  Bebidas: [
-    { name: 'Agua', image: require('../assets/images/bebidas/agua.png') },
-    { name: 'Coca-Cola', image: require('../assets/images/bebidas/coca-cola.png') },
-    { name: 'Cerveza', image: require('../assets/images/bebidas/cerveza.png') },
-    { name: 'Cola Cao', image: require('../assets/images/bebidas/colacao.png') },
-    { name: 'Zumo melocotón', image: require('../assets/images/bebidas/zumo-melocoton.png') },
-    { name: 'Aquarius limón', image: require('../assets/images/bebidas/aquarius-limon.png') },
-  ],
   'Arroz, legumbres y pastas': [
     { name: 'Arroz', image: require('../assets/images/arroz/arroz.jpg') },
     { name: 'Arroz Basmati', image: require('../assets/images/arroz/basmati.jpg') },
@@ -27,6 +19,22 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Pedrosillano', image: require('../assets/images/legumbres/pedrosillano.jpg') },
     { name: 'Dinos', image: require('../assets/images/pastas/dinos.jpg') },
     { name: 'Tagliatelle', image: require('../assets/images/pastas/tagliatelle.jpg') },
+  ],
+  'Bebidas': [
+    { name: 'Agua', image: require('../assets/images/bebidas/agua.png') },
+    { name: 'Coca-Cola', image: require('../assets/images/bebidas/coca-cola.png') },
+    { name: 'Cerveza', image: require('../assets/images/bebidas/cerveza.png') },
+    { name: 'Cola Cao', image: require('../assets/images/bebidas/colacao.png') },
+    { name: 'Zumo melocotón', image: require('../assets/images/bebidas/zumo-melocoton.png') },
+    { name: 'Aquarius limón', image: require('../assets/images/bebidas/aquarius-limon.png') },
+  ],
+  'Bebé': [
+    { name: 'Papilla verduritas con merluza Hero Solo +6 meses', image: require('../assets/images/bebe/papilla.jpg') },
+    { name: 'Preparado lácteo crecimiento +1 año', image: require('../assets/images/bebe/preparado.jpg') },
+    { name: 'Leche de continuación en polvo 2 Nativa Nestlé +6 meses', image: require('../assets/images/bebe/leche.jpg') },
+    { name: 'Papilla 8 cereales Hero Solo +6 meses 0% azúcares añadidos', image: require('../assets/images/bebe/cereales.jpg') },
+    { name: 'Chupete silicona reversible +0 a 6 meses', image: require('../assets/images/bebe/chupete.jpg') },
+    { name: 'Biberón 150 ml tetina silicona flujo lento +0 meses', image: require('../assets/images/bebe/biberon.jpg') },
   ],
 };
 
