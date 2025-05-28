@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import {
   View,
   Text,
@@ -7,19 +7,16 @@ import {
   Image,
   TouchableOpacity,
   Switch,
+  Animated,
 } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
-const CATEGORIES = ['Arroz, legumbres y pastas', 'Bebidas'];
+const CATEGORIES = [
+  'Arroz, legumbres y pastas', 'Bebidas', 'Bebe', 'Cuidado del cabello',
+  'Cuidado facial y corporal', 'Fitoterapia y parafarmacia', 'Limpieza y hogar', 'Mascotas',
+];
 
 const PRODUCTS: Record<string, { name: string; image: any }[]> = {
-  Bebidas: [
-    { name: 'Agua', image: require('../assets/images/bebidas/agua.png') },
-    { name: 'Coca-Cola', image: require('../assets/images/bebidas/coca-cola.png') },
-    { name: 'Cerveza', image: require('../assets/images/bebidas/cerveza.png') },
-    { name: 'Cola Cao', image: require('../assets/images/bebidas/colacao.png') },
-    { name: 'Zumo melocotón', image: require('../assets/images/bebidas/zumo-melocoton.png') },
-    { name: 'Aquarius limón', image: require('../assets/images/bebidas/aquarius-limon.png') },
-  ],
   'Arroz, legumbres y pastas': [
     { name: 'Arroz', image: require('../assets/images/arroz/arroz.jpg') },
     { name: 'Arroz Basmati', image: require('../assets/images/arroz/basmati.jpg') },
@@ -28,11 +25,48 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Dinos', image: require('../assets/images/pastas/dinos.jpg') },
     { name: 'Tagliatelle', image: require('../assets/images/pastas/tagliatelle.jpg') },
   ],
+  Bebidas: [
+    { name: 'Agua', image: require('../assets/images/bebidas/agua.png') },
+    { name: 'Coca-Cola', image: require('../assets/images/bebidas/coca-cola.png') },
+    { name: 'Cerveza', image: require('../assets/images/bebidas/cerveza.png') },
+    { name: 'Cola Cao', image: require('../assets/images/bebidas/colacao.png') },
+    { name: 'Zumo melocotón', image: require('../assets/images/bebidas/zumo-melocoton.png') },
+    { name: 'Aquarius limón', image: require('../assets/images/bebidas/aquarius-limon.png') },
+  ],
+  Bebe: [],
+  'Cuidado del cabello': [
+    { name: 'Champú hidratante', image: require('../assets/images/cabello/shampoo.png') },
+    { name: 'Acondicionador suave', image: require('../assets/images/cabello/acondicionador.png') },
+    { name: 'Mascarilla nutritiva', image: require('../assets/images/cabello/mascarilla.png') },
+    { name: 'Aceite de argán', image: require('../assets/images/cabello/argan.png') },
+    { name: 'Spray desenredante', image: require('../assets/images/cabello/spray.png') },
+    { name: 'Gel fijador', image: require('../assets/images/cabello/gel.png') },
+  ],
+  'Cuidado facial y corporal': [],
+  'Fitoterapia y parafarmacia': [
+    { name: 'Infusión de manzanilla', image: require('../assets/images/parafarmacia/manzanilla.png') },
+    { name: 'Infusión de valeriana', image: require('../assets/images/parafarmacia/valeriana.png') },
+    { name: 'Té de hierba luisa', image: require('../assets/images/parafarmacia/hierba-luisa.png') },
+    { name: 'Gasas estériles', image: require('../assets/images/parafarmacia/gasas.png') },
+    { name: 'Agua oxigenada', image: require('../assets/images/parafarmacia/agua-oxigenada.png') },
+    { name: 'Betadine', image: require('../assets/images/parafarmacia/betadine.png') },
+  ],
+  'Limpieza y hogar': [],
+  Mascotas: [
+    { name: 'Pienso seco para perros', image: require('../assets/images/mascotas/pienso-perro.png') },
+    { name: 'Pienso seco para gatos', image: require('../assets/images/mascotas/pienso-gato.png') },
+    { name: 'Snacks dentales', image: require('../assets/images/mascotas/snacks-dentales.png') },
+    { name: 'Galletas para perros', image: require('../assets/images/mascotas/galletas.png') },
+    { name: 'Arena para gatos', image: require('../assets/images/mascotas/arena.png') },
+    { name: 'Champú para mascotas', image: require('../assets/images/mascotas/champu.png') },
+  ],
 };
 
 export default function CategoriasScreen() {
-  const [selectedCategory, setSelectedCategory] = useState('Bebidas');
+  const [selectedCategory, setSelectedCategory] = useState('Arroz, legumbres y pastas');
   const [checkedItems, setCheckedItems] = useState<{ [key: string]: boolean }>({});
+  const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+  const sidebarWidth = useRef(new Animated.Value(150)).current;
 
   const toggleSwitch = (productName: string) => {
     setCheckedItems(prev => ({
@@ -41,21 +75,29 @@ export default function CategoriasScreen() {
     }));
   };
 
+  const toggleSidebar = () => {
+    const newWidth = isSidebarVisible ? 0 : 150;
+    Animated.timing(sidebarWidth, {
+      toValue: newWidth,
+      duration: 250,
+      useNativeDriver: false,
+    }).start();
+    setIsSidebarVisible(!isSidebarVisible);
+  };
+
   return (
     <View style={styles.container}>
-      <Image
-        source={require('../assets/header.png')}
-        style={styles.headerImage}
-        resizeMode="contain"
-      />
-
-      <Text style={styles.title}>Categorías</Text>
+      <View style={styles.header}>
+        <TouchableOpacity onPress={toggleSidebar} style={styles.menuButton}>
+          <Feather name="menu" size={24} color="#333" />
+        </TouchableOpacity>
+       
+      </View>
 
       <View style={styles.content}>
-        {/* Panel lateral */}
-        <View style={styles.sidebar}>
+        <Animated.View style={[styles.sidebar, { width: sidebarWidth }]}>
           <ScrollView contentContainerStyle={styles.sidebarContent}>
-            {CATEGORIES.map((category) => (
+            {isSidebarVisible && CATEGORIES.map((category) => (
               <TouchableOpacity
                 key={category}
                 onPress={() => setSelectedCategory(category)}
@@ -75,9 +117,8 @@ export default function CategoriasScreen() {
               </TouchableOpacity>
             ))}
           </ScrollView>
-        </View>
+        </Animated.View>
 
-        {/* Productos */}
         <ScrollView style={styles.products}>
           <View style={styles.grid}>
             {PRODUCTS[selectedCategory]?.map((product, index) => (
@@ -103,27 +144,23 @@ export default function CategoriasScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
+  container: { flex: 1, backgroundColor: '#fff' },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 15,
+    paddingVertical: 10,
   },
-  headerImage: {
-    width: '100%',
-    height: 150,
-    marginTop: 20,
+  menuButton: {
+    padding: 8,
+    marginRight: 15,
   },
   title: {
     fontSize: 22,
     fontWeight: 'bold',
-    textAlign: 'center',
-    marginVertical: 10,
   },
-  content: {
-    flex: 1,
-    flexDirection: 'row',
-  },
+  content: { flex: 1, flexDirection: 'row' },
   sidebar: {
-    flex: 0.2,
     backgroundColor: '#f5f5f5',
   },
   sidebarContent: {
@@ -138,20 +175,15 @@ const styles = StyleSheet.create({
     width: '90%',
     alignItems: 'center',
   },
-  categoryButtonActive: {
-    backgroundColor: '#dcdcdc',
-  },
+  categoryButtonActive: { backgroundColor: '#dcdcdc' },
   categoryText: {
     fontSize: 12,
     color: '#333',
     textAlign: 'center',
   },
-  categoryTextActive: {
-    fontWeight: 'bold',
-    color: '#000',
-  },
+  categoryTextActive: { fontWeight: 'bold', color: '#000' },
   products: {
-    flex: 0.8,
+    flex: 1,
     paddingHorizontal: 10,
   },
   grid: {
