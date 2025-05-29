@@ -12,8 +12,8 @@ import {
 import { Feather } from '@expo/vector-icons';
 
 const CATEGORIES = [
-  'Arroz, legumbres y pastas', 'Bebidas', 'Bebe', 'Cuidado del cabello',
-  'Cuidado facial y corporal', 'Fitoterapia y parafarmacia', 'Limpieza y hogar', 'Mascotas',
+  'Arroz, legumbres y pastas', 'Bebidas', 'Bebé', 'Cuidado del cabello',
+  'Cuidado facial y corporal', 'Fisioterapia y parafarmacia', 'Limpieza y hogar', 'Mascotas',
 ];
 
 const PRODUCTS: Record<string, { name: string; image: any }[]> = {
@@ -25,7 +25,7 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Dinos', image: require('../assets/images/pastas/dinos.jpg') },
     { name: 'Tagliatelle', image: require('../assets/images/pastas/tagliatelle.jpg') },
   ],
-  Bebidas: [
+ 'Bebidas': [
     { name: 'Agua', image: require('../assets/images/bebidas/agua.png') },
     { name: 'Coca-Cola', image: require('../assets/images/bebidas/coca-cola.png') },
     { name: 'Cerveza', image: require('../assets/images/bebidas/cerveza.png') },
@@ -33,7 +33,7 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Zumo melocotón', image: require('../assets/images/bebidas/zumo-melocoton.png') },
     { name: 'Aquarius limón', image: require('../assets/images/bebidas/aquarius-limon.png') },
   ],
-  Bebe: [
+  'Bebé': [
     { name: 'Papilla verduritas con merluza Hero Solo +6 meses', image: require('../assets/images/bebe/papilla.jpg') },
     { name: 'Preparado lácteo crecimiento +1 año', image: require('../assets/images/bebe/preparado.jpg') },
     { name: 'Leche de continuación en polvo 2 Nativa Nestlé +6 meses', image: require('../assets/images/bebe/leche.jpg') },
@@ -49,11 +49,19 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Spray desenredante', image: require('../assets/images/cabello/spray.png') },
     { name: 'Gel fijador', image: require('../assets/images/cabello/gel.png') },
   ],
-  'Cuidado facial y corporal': [],
-  'Fitoterapia y parafarmacia': [
+    'Cuidado facial y corporal': [
+    { name: 'Bandas de cera facial piel sensible', image: require('../assets/images/facial/bandas.jpg') },
+    { name: 'Toallitas desmaquillantes cara y ojos, piel normal-mixta con camomila', image: require('../assets/images/facial/camomila.jpg') },
+    { name: 'Leche facial limpiadora Facial Clean todo tipo de piel', image: require('../assets/images/facial/leche.jpg') },
+    { name: 'Mascarilla facial peeling de alga negra Montagne Jeunesse', image: require('../assets/images/facial/peeling.jpg') },
+    { name: 'Mousse facial limpiadora purificante Oil Free piel grasa y acneica', image: require('../assets/images/facial/mousse.jpg') },
+    { name: 'Gel facial Matifica Deliplus sebo-regulador piel grasa o mixta', image: require('../assets/images/facial/gel.jpg') },
+  ],
+
+  'Fisioterapia y parafarmacia': [
   ],
   'Limpieza y hogar': [],
-  Mascotas: []
+ ' Mascotas': []
 };
 
 export default function CategoriasScreen() {
