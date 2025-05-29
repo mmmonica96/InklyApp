@@ -59,6 +59,12 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
   ],
 
   'Fisioterapia y parafarmacia': [
+    { name: 'Infusión de manzanilla', image: require('../assets/images/parafarmacia/manzanilla.png') },
+    { name: 'Infusión de valeriana', image: require('../assets/images/parafarmacia/valeriana.png') },
+    { name: 'Té de hierba luisa', image: require('../assets/images/parafarmacia/hierba-luisa.png') },
+    { name: 'Gasas estériles', image: require('../assets/images/parafarmacia/gasas.png') },
+    { name: 'Agua oxigenada', image: require('../assets/images/parafarmacia/agua-oxigenada.png') },
+    { name: 'Betadine', image: require('../assets/images/parafarmacia/betadine.png') },
   ],
   'Limpieza y hogar': [],
  ' Mascotas': []
