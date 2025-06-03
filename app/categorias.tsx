@@ -74,7 +74,7 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Detergente lavado a mano en polvo', image: require('../assets/images/limpieza/polvo.jpg') },
     { name: 'Eliminador de olores tejidos Bosque Verde con pistola', image: require('../assets/images/limpieza/eliminador.jpg') },
   ],
-  Mascotas: [
+ ' Mascotas': [
     { name: 'Pienso seco para perros', image: require('../assets/images/mascotas/pienso-perro.png') },
     { name: 'Pienso seco para gatos', image: require('../assets/images/mascotas/pienso-gato.png') },
     { name: 'Snacks dentales', image: require('../assets/images/mascotas/snacks-dentales.png') },
