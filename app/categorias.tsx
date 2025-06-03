@@ -66,7 +66,14 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Agua oxigenada', image: require('../assets/images/parafarmacia/agua-oxigenada.png') },
     { name: 'Betadine', image: require('../assets/images/parafarmacia/betadine.png') },
   ],
-  'Limpieza y hogar': [],
+   'Limpieza y hogar': [
+    { name: 'Detergente ropa jabón natural de Marsella líquido', image: require('../assets/images/limpieza/detergente.jpg') },
+    { name: 'Detergente ropa blanca y de color líquido', image: require('../assets/images/limpieza/blanca.jpg') },
+    { name: 'Detergente ropa blanca y de color en cápsulas para lavadora', image: require('../assets/images/limpieza/capsulas.jpg') },
+    { name: 'Jabón Natural con glicerina Bosque Verde', image: require('../assets/images/limpieza/jabon.jpg') },
+    { name: 'Detergente lavado a mano en polvo', image: require('../assets/images/limpieza/polvo.jpg') },
+    { name: 'Eliminador de olores tejidos Bosque Verde con pistola', image: require('../assets/images/limpieza/eliminador.jpg') },
+  ],
  ' Mascotas': []
 };
 
