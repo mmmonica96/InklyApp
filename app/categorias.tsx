@@ -33,7 +33,7 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Zumo melocotón', image: require('../assets/images/bebidas/zumo-melocoton.png') },
     { name: 'Aquarius limón', image: require('../assets/images/bebidas/aquarius-limon.png') },
   ],
-  Bebe: [
+  Bebé: [
     { name: 'Papilla verduritas con merluza Hero Solo +6 meses', image: require('../assets/images/bebe/papilla.jpg') },
     { name: 'Preparado lácteo crecimiento +1 año', image: require('../assets/images/bebe/preparado.jpg') },
     { name: 'Leche de continuación en polvo 2 Nativa Nestlé +6 meses', image: require('../assets/images/bebe/leche.jpg') },
@@ -66,7 +66,14 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Agua oxigenada', image: require('../assets/images/parafarmacia/agua-oxigenada.png') },
     { name: 'Betadine', image: require('../assets/images/parafarmacia/betadine.png') },
   ],
-  'Limpieza y hogar': [],
+  'Limpieza y hogar': [
+    { name: 'Detergente ropa jabón natural de Marsella líquido', image: require('../assets/images/limpieza/detergente.jpg') },
+    { name: 'Detergente ropa blanca y de color líquido', image: require('../assets/images/limpieza/blanca.jpg') },
+    { name: 'Detergente ropa blanca y de color en cápsulas para lavadora', image: require('../assets/images/limpieza/capsulas.jpg') },
+    { name: 'Jabón Natural con glicerina Bosque Verde', image: require('../assets/images/limpieza/jabon.jpg') },
+    { name: 'Detergente lavado a mano en polvo', image: require('../assets/images/limpieza/polvo.jpg') },
+    { name: 'Eliminador de olores tejidos Bosque Verde con pistola', image: require('../assets/images/limpieza/eliminador.jpg') },
+  ],
   Mascotas: [
     { name: 'Pienso seco para perros', image: require('../assets/images/mascotas/pienso-perro.png') },
     { name: 'Pienso seco para gatos', image: require('../assets/images/mascotas/pienso-gato.png') },
