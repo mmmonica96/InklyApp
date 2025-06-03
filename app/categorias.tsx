@@ -25,7 +25,7 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Dinos', image: require('../assets/images/pastas/dinos.jpg') },
     { name: 'Tagliatelle', image: require('../assets/images/pastas/tagliatelle.jpg') },
   ],
- 'Bebidas': [
+ Bebidas: [
     { name: 'Agua', image: require('../assets/images/bebidas/agua.png') },
     { name: 'Coca-Cola', image: require('../assets/images/bebidas/coca-cola.png') },
     { name: 'Cerveza', image: require('../assets/images/bebidas/cerveza.png') },
@@ -33,7 +33,7 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Zumo melocotón', image: require('../assets/images/bebidas/zumo-melocoton.png') },
     { name: 'Aquarius limón', image: require('../assets/images/bebidas/aquarius-limon.png') },
   ],
-  'Bebé': [
+  Bebe: [
     { name: 'Papilla verduritas con merluza Hero Solo +6 meses', image: require('../assets/images/bebe/papilla.jpg') },
     { name: 'Preparado lácteo crecimiento +1 año', image: require('../assets/images/bebe/preparado.jpg') },
     { name: 'Leche de continuación en polvo 2 Nativa Nestlé +6 meses', image: require('../assets/images/bebe/leche.jpg') },
@@ -67,7 +67,14 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Betadine', image: require('../assets/images/parafarmacia/betadine.png') },
   ],
   'Limpieza y hogar': [],
- ' Mascotas': []
+  Mascotas: [
+    { name: 'Pienso seco para perros', image: require('../assets/images/mascotas/pienso-perro.png') },
+    { name: 'Pienso seco para gatos', image: require('../assets/images/mascotas/pienso-gato.png') },
+    { name: 'Snacks dentales', image: require('../assets/images/mascotas/snacks-dentales.png') },
+    { name: 'Galletas para perros', image: require('../assets/images/mascotas/galletas.png') },
+    { name: 'Arena para gatos', image: require('../assets/images/mascotas/arena.png') },
+    { name: 'Champú para mascotas', image: require('../assets/images/mascotas/champu.png') },
+  ],
 };
 
 export default function CategoriasScreen() {
