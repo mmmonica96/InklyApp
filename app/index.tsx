@@ -26,8 +26,12 @@ export default function InicioScreen() {
             <Text style={styles.boxText}>Mi lista</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.box} activeOpacity={0.8}>
-            <Feather name="tag" size={24} color="#333" />
+          <TouchableOpacity
+            style={styles.box}
+            activeOpacity={0.8}
+            onPress={() => router.push('/ofertas')}
+          >
+            <Feather name="grid" size={24} color="#333" />
             <Text style={styles.boxText}>Ofertas</Text>
           </TouchableOpacity>
 
@@ -53,11 +57,11 @@ export default function InicioScreen() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#fff', // fondo blanco
+    backgroundColor: '#fff',
   },
   header: {
     height: 60,
-    backgroundColor: '#c8a2d6', // solo la barra superior en morado
+    backgroundColor: '#c8a2d6', 
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: 20,
@@ -72,7 +76,7 @@ const styles = StyleSheet.create({
   scrollContent: {
     alignItems: 'center',
     paddingBottom: 20,
-    backgroundColor: '#fff', // también blanco
+    backgroundColor: '#fff', 
   },
   headerImage: {
     width: '100%',
