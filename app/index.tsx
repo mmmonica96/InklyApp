@@ -26,7 +26,7 @@ export default function InicioScreen() {
             activeOpacity={0.8}
             onPress={() => router.push('/lista')}
           >
-            <Feather name="grid" size={24} color="#333" />
+            <Feather name="list" size={24} color="#333" />
             <Text style={styles.boxText}>Mi Lista</Text>
           </TouchableOpacity>
 
@@ -35,7 +35,7 @@ export default function InicioScreen() {
             activeOpacity={0.8}
             onPress={() => router.push('/ofertas')}
           >
-            <Feather name="grid" size={24} color="#333" />
+            <Feather name="percent" size={24} color="#333" />
             <Text style={styles.boxText}>Ofertas</Text>
           </TouchableOpacity>
 
