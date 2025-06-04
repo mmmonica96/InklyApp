@@ -10,6 +10,7 @@ import {
   Animated,
 } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import { useLista } from '../context/listContext';
 
 const CATEGORIES = [
   'Arroz, legumbres y pastas', 'Bebidas', 'Bebé', 'Cuidado del cabello',
@@ -25,7 +26,7 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Dinos', image: require('../assets/images/pastas/dinos.jpg') },
     { name: 'Tagliatelle', image: require('../assets/images/pastas/tagliatelle.jpg') },
   ],
- Bebidas: [
+  Bebidas: [
     { name: 'Agua', image: require('../assets/images/bebidas/agua.png') },
     { name: 'Coca-Cola', image: require('../assets/images/bebidas/coca-cola.png') },
     { name: 'Cerveza', image: require('../assets/images/bebidas/cerveza.png') },
@@ -34,22 +35,22 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Aquarius limón', image: require('../assets/images/bebidas/aquarius-limon.png') },
   ],
   Bebé: [
-    { name: 'Papilla verduritas con merluza Hero Solo +6 meses', image: require('../assets/images/bebe/papilla.jpg') },
-    { name: 'Preparado lácteo crecimiento +1 año', image: require('../assets/images/bebe/preparado.jpg') },
-    { name: 'Leche de continuación en polvo 2 Nativa Nestlé +6 meses', image: require('../assets/images/bebe/leche.jpg') },
-    { name: 'Papilla 8 cereales Hero Solo +6 meses 0% azúcares añadidos', image: require('../assets/images/bebe/cereales.jpg') },
-    { name: 'Chupete silicona reversible +0 a 6 meses', image: require('../assets/images/bebe/chupete.jpg') },
-    { name: 'Biberón 150 ml tetina silicona flujo lento +0 meses', image: require('../assets/images/bebe/biberon.jpg') },
+    { name: 'Papilla verduritas', image: require('../assets/images/bebe/papilla.jpg') },
+    { name: 'Preparado lácteo', image: require('../assets/images/bebe/preparado.jpg') },
+    { name: 'Leche de continuación', image: require('../assets/images/bebe/leche.jpg') },
+    { name: 'Papilla 8 cereales', image: require('../assets/images/bebe/cereales.jpg') },
+    { name: 'Chupete silicona', image: require('../assets/images/bebe/chupete.jpg') },
+    { name: 'Biberón 150 ml', image: require('../assets/images/bebe/biberon.jpg') },
   ],
   'Cuidado del cabello': [
     { name: 'Champú hidratante', image: require('../assets/images/cabello/shampoo.png') },
-    { name: 'Acondicionador suave', image: require('../assets/images/cabello/acondicionador.png') },
+    { name: 'Acondicionador', image: require('../assets/images/cabello/acondicionador.png') },
     { name: 'Mascarilla nutritiva', image: require('../assets/images/cabello/mascarilla.png') },
     { name: 'Aceite de argán', image: require('../assets/images/cabello/argan.png') },
     { name: 'Spray desenredante', image: require('../assets/images/cabello/spray.png') },
     { name: 'Gel fijador', image: require('../assets/images/cabello/gel.png') },
   ],
-    'Cuidado facial y corporal': [
+  'Cuidado facial y corporal': [
     { name: 'Bandas de cera facial piel sensible', image: require('../assets/images/facial/bandas.jpg') },
     { name: 'Toallitas desmaquillantes cara y ojos, piel normal-mixta con camomila', image: require('../assets/images/facial/camomila.jpg') },
     { name: 'Leche facial limpiadora Facial Clean todo tipo de piel', image: require('../assets/images/facial/leche.jpg') },
@@ -57,45 +58,38 @@ const PRODUCTS: Record<string, { name: string; image: any }[]> = {
     { name: 'Mousse facial limpiadora purificante Oil Free piel grasa y acneica', image: require('../assets/images/facial/mousse.jpg') },
     { name: 'Gel facial Matifica Deliplus sebo-regulador piel grasa o mixta', image: require('../assets/images/facial/gel.jpg') },
   ],
-
   'Fisioterapia y parafarmacia': [
-    { name: 'Infusión de manzanilla', image: require('../assets/images/parafarmacia/manzanilla.png') },
-    { name: 'Infusión de valeriana', image: require('../assets/images/parafarmacia/valeriana.png') },
-    { name: 'Té de hierba luisa', image: require('../assets/images/parafarmacia/hierba-luisa.png') },
+    { name: 'Infusión manzanilla', image: require('../assets/images/parafarmacia/manzanilla.png') },
+    { name: 'Valeriana', image: require('../assets/images/parafarmacia/valeriana.png') },
+    { name: 'Hierba luisa', image: require('../assets/images/parafarmacia/hierba-luisa.png') },
     { name: 'Gasas estériles', image: require('../assets/images/parafarmacia/gasas.png') },
     { name: 'Agua oxigenada', image: require('../assets/images/parafarmacia/agua-oxigenada.png') },
     { name: 'Betadine', image: require('../assets/images/parafarmacia/betadine.png') },
   ],
   'Limpieza y hogar': [
-    { name: 'Detergente ropa jabón natural de Marsella líquido', image: require('../assets/images/limpieza/detergente.jpg') },
-    { name: 'Detergente ropa blanca y de color líquido', image: require('../assets/images/limpieza/blanca.jpg') },
-    { name: 'Detergente ropa blanca y de color en cápsulas para lavadora', image: require('../assets/images/limpieza/capsulas.jpg') },
-    { name: 'Jabón Natural con glicerina Bosque Verde', image: require('../assets/images/limpieza/jabon.jpg') },
-    { name: 'Detergente lavado a mano en polvo', image: require('../assets/images/limpieza/polvo.jpg') },
-    { name: 'Eliminador de olores tejidos Bosque Verde con pistola', image: require('../assets/images/limpieza/eliminador.jpg') },
+    { name: 'Detergente Marsella', image: require('../assets/images/limpieza/detergente.jpg') },
+    { name: 'Detergente color', image: require('../assets/images/limpieza/blanca.jpg') },
+    { name: 'Cápsulas lavadora', image: require('../assets/images/limpieza/capsulas.jpg') },
+    { name: 'Jabón glicerina', image: require('../assets/images/limpieza/jabon.jpg') },
+    { name: 'Detergente mano', image: require('../assets/images/limpieza/polvo.jpg') },
+    { name: 'Eliminador olores', image: require('../assets/images/limpieza/eliminador.jpg') },
   ],
- Mascotas: [
-    { name: 'Pienso seco para perros', image: require('../assets/images/mascotas/pienso-perro.png') },
-    { name: 'Pienso seco para gatos', image: require('../assets/images/mascotas/pienso-gato.png') },
+  Mascotas: [
+    { name: 'Pienso perros', image: require('../assets/images/mascotas/pienso-perro.png') },
+    { name: 'Pienso gatos', image: require('../assets/images/mascotas/pienso-gato.png') },
     { name: 'Snacks dentales', image: require('../assets/images/mascotas/snacks-dentales.png') },
-    { name: 'Galletas para perros', image: require('../assets/images/mascotas/galletas.png') },
-    { name: 'Arena para gatos', image: require('../assets/images/mascotas/arena.png') },
-    { name: 'Champú para mascotas', image: require('../assets/images/mascotas/champu.png') },
+    { name: 'Galletas perros', image: require('../assets/images/mascotas/galletas.png') },
+    { name: 'Arena gatos', image: require('../assets/images/mascotas/arena.png') },
+    { name: 'Champú mascotas', image: require('../assets/images/mascotas/champu.png') },
   ],
 };
 
 export default function CategoriasScreen() {
   const [selectedCategory, setSelectedCategory] = useState<string>('Arroz, legumbres y pastas');
-  const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
   const [isSidebarVisible, setIsSidebarVisible] = useState(true);
   const sidebarWidth = useRef(new Animated.Value(80)).current;
 
-  const toggleSwitch = (productName: string) => {
-    setCheckedItems(prev => ({
-      ...prev,
-      [productName]: !prev[productName],
-    }));
-  };
+  const { lista, toggleProducto } = useLista();
 
   const toggleSidebar = () => {
     const newWidth = isSidebarVisible ? 0 : 80;
@@ -148,10 +142,10 @@ export default function CategoriasScreen() {
                 <View style={styles.productLabelRow}>
                   <Text style={styles.productName}>{product.name}</Text>
                   <Switch
-                    value={!!checkedItems[product.name]}
-                    onValueChange={() => toggleSwitch(product.name)}
+                    value={!!lista.find(p => p.name === product.name)}
+                    onValueChange={() => toggleProducto(product)}
                     trackColor={{ false: '#ccc', true: '#81b0ff' }}
-                    thumbColor={checkedItems[product.name] ? '#007aff' : '#f4f3f4'}
+                    thumbColor={lista.find(p => p.name === product.name) ? '#007aff' : '#f4f3f4'}
                     style={{ marginLeft: 8 }}
                   />
                 </View>

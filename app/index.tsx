@@ -21,9 +21,13 @@ export default function InicioScreen() {
         />
 
         <View style={styles.grid}>
-          <TouchableOpacity style={styles.box} activeOpacity={0.8}>
-            <Feather name="list" size={24} color="#333" />
-            <Text style={styles.boxText}>Mi lista</Text>
+          <TouchableOpacity
+            style={styles.box}
+            activeOpacity={0.8}
+            onPress={() => router.push('/lista')}
+          >
+            <Feather name="grid" size={24} color="#333" />
+            <Text style={styles.boxText}>Mi Lista</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.box} activeOpacity={0.8}>
