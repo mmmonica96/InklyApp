@@ -49,8 +49,8 @@ export default function InicioScreen() {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.box} activeOpacity={0.8}>
-            <Feather name="shopping-cart" size={24} color="#333" />
-            <Text style={styles.boxText}>Supermercados</Text>
+            <Feather name="file-text" size={24} color="#333" />
+            <Text style={styles.boxText}>Recetas</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
