@@ -22,7 +22,7 @@ export default function InicioScreen() {
           <Text style={styles.boxText}>Categorías</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.box}>
-          <Text style={styles.boxText}></Text>
+          <Text style={styles.boxText}>Recetas</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -58,5 +58,6 @@ const styles = StyleSheet.create({
   boxText: {
     fontSize: 16,
     fontWeight: '600',
+    textAlign: 'center',
   },
 });
