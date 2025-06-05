@@ -48,7 +48,11 @@ export default function InicioScreen() {
             <Text style={styles.boxText}>Categorías</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.box} activeOpacity={0.8}>
+          <TouchableOpacity
+            style={styles.box}
+            activeOpacity={0.8}
+            onPress={() => router.push('/recetas')}
+          >
             <Feather name="file-text" size={24} color="#333" />
             <Text style={styles.boxText}>Recetas</Text>
           </TouchableOpacity>

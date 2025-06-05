@@ -1,94 +1,227 @@
-import { View, Text, StyleSheet, ScrollView, Image, Switch } from 'react-native';
+import { useState, useRef } from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+  Switch,
+  Animated,
+} from 'react-native';
+import { Feather } from '@expo/vector-icons';
 import { useLista } from '../context/listContext';
 
-const RECETAS = {
+const CATEGORIES = ['Tartas', 'Bizcochos'];
+
+const RECETAS: Record<
+  string,
+  { name: string; image: any; ingredientes: { name: string; image: any }[] }[]
+> = {
+  Tartas: [
+    {
+      name: 'Tarta de manzana',
+      image: require('../assets/images/tartas/manzana.jpg'),
+      ingredientes: [
+        { name: 'Masa brisa', image: require('../assets/images/ingredientes/masa-brisa.png') },
+        { name: 'Manzanas', image: require('../assets/images/ingredientes/manzana.png') },
+        { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
+        { name: 'Canela', image: require('../assets/images/ingredientes/canela.png') },
+        { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.png') },
+      ],
+    },
+    {
+      name: 'Tarta de queso',
+      image: require('../assets/images/tartas/queso.jpg'),
+      ingredientes: [
+        { name: 'Queso crema', image: require('../assets/images/ingredientes/queso-crema.png') },
+        { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
+        { name: 'Huevos', image: require('../assets/images/ingredientes/huevos.png') },
+        { name: 'Nata', image: require('../assets/images/ingredientes/nata.png') },
+        { name: 'Base de galletas', image: require('../assets/images/ingredientes/galletas.png') },
+      ],
+    },
+  ],
   Bizcochos: [
     {
       name: 'Bizcocho de chocolate',
       image: require('../assets/images/bizcochos/chocolate.jpeg'),
-      ingredientes:
-        '3 huevos M, 200 g de azúcar blanco, 120 g de aceite de girasol, 160 g de leche entera, 180 g de harina de trigo, 50 g de cacao en polvo sin azúcar, 2 cucharaditas de levadura química (tipo Royal), 1 pizca de sal, 100 g de agua caliente',
+      ingredientes: [
+        { name: 'Huevos', image: require('../assets/images/ingredientes/huevos.png') },
+        { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
+        { name: 'Aceite', image: require('../assets/images/ingredientes/aceite.png') },
+        { name: 'Leche', image: require('../assets/images/ingredientes/leche.png') },
+        { name: 'Harina', image: require('../assets/images/ingredientes/harina.png') },
+        { name: 'Cacao', image: require('../assets/images/ingredientes/cacao.png') },
+        { name: 'Levadura', image: require('../assets/images/ingredientes/levadura.png') },
+      ],
     },
     {
       name: 'Brownies',
       image: require('../assets/images/bizcochos/brownie.jpg'),
-      ingredientes:
-        '200 gramos de chocolate negro, 110 gramos de mantequilla, 4 huevos, 120 gramos de azúcar, 1 cucharada de esencia de vainilla, 85 gramos de harina, bicarbonato, nueces, pepitas de chocolate',
+      ingredientes: [
+        { name: 'Chocolate', image: require('../assets/images/ingredientes/chocolate.png') },
+        { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.png') },
+        { name: 'Huevos', image: require('../assets/images/ingredientes/huevos.png') },
+        { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
+        { name: 'Harina', image: require('../assets/images/ingredientes/harina.png') },
+        { name: 'Nueces', image: require('../assets/images/ingredientes/nueces.png') },
+      ],
     },
   ],
 };
 
 export default function RecetasScreen() {
+  const [selectedCategory, setSelectedCategory] = useState<string>('Tartas');
+  const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+  const sidebarWidth = useRef(new Animated.Value(80)).current;
+
   const { lista, toggleProducto } = useLista();
 
-  return (
-    <ScrollView style={styles.container}>
-      <Text style={styles.title}>Recetas</Text>
+  const toggleSidebar = () => {
+    const newWidth = isSidebarVisible ? 0 : 80;
+    Animated.timing(sidebarWidth, {
+      toValue: newWidth,
+      duration: 250,
+      useNativeDriver: false,
+    }).start();
+    setIsSidebarVisible(!isSidebarVisible);
+  };
 
-      {Object.entries(RECETAS).map(([categoria, recetas]) => (
-        <View key={categoria} style={styles.section}>
-          <Text style={styles.sectionTitle}>{categoria}</Text>
+  const isInLista = (nombre: string) =>
+    lista.some((item) => item.name === nombre);
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <TouchableOpacity onPress={toggleSidebar} style={styles.menuButton}>
+          <Feather name="menu" size={24} color="#333" />
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.content}>
+        <Animated.View style={[styles.sidebar, { width: sidebarWidth }]}>
+          <ScrollView contentContainerStyle={styles.sidebarContent}>
+            {isSidebarVisible &&
+              CATEGORIES.map((category) => (
+                <TouchableOpacity
+                  key={category}
+                  onPress={() => setSelectedCategory(category)}
+                  style={[
+                    styles.categoryButton,
+                    selectedCategory === category && styles.categoryButtonActive,
+                  ]}
+                >
+                  <Text
+                    style={[
+                      styles.categoryText,
+                      selectedCategory === category && styles.categoryTextActive,
+                    ]}
+                  >
+                    {category}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+          </ScrollView>
+        </Animated.View>
+
+        <ScrollView style={styles.products}>
           <View style={styles.grid}>
-            {recetas.map((receta, index) => (
+            {RECETAS[selectedCategory]?.map((receta, index) => (
               <View key={index} style={styles.card}>
-                <Image source={receta.image} style={styles.image} />
-                <View style={styles.infoRow}>
-                  <Text style={styles.name}>{receta.name}</Text>
-                  <Switch
-                    value={!!lista.find(r => r.name === receta.name)}
-                    onValueChange={() => toggleProducto(receta)}
-                    trackColor={{ false: '#ccc', true: '#81b0ff' }}
-                    thumbColor={lista.find(r => r.name === receta.name) ? '#007aff' : '#f4f3f4'}
-                  />
-                </View>
-                <Text style={styles.ingredientes}>{receta.ingredientes}</Text>
+                <Image source={receta.image} style={styles.productImage} />
+                <Text style={styles.productName}>{receta.name}</Text>
+                {receta.ingredientes.map((ing, idx) => (
+                  <View key={idx} style={styles.ingredientRow}>
+                    <Image source={ing.image} style={styles.ingredientImage} />
+                    <Text style={styles.ingredientText}>{ing.name}</Text>
+                    <Switch
+                      value={isInLista(ing.name)}
+                      onValueChange={() => toggleProducto(ing)}
+                      trackColor={{ false: '#ccc', true: '#81b0ff' }}
+                      thumbColor={isInLista(ing.name) ? '#007aff' : '#f4f3f4'}
+                    />
+                  </View>
+                ))}
               </View>
             ))}
           </View>
-        </View>
-      ))}
-    </ScrollView>
+        </ScrollView>
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#fff', padding: 15 },
-  title: { fontSize: 22, fontWeight: 'bold', marginBottom: 10 },
-  section: { marginBottom: 30 },
-  sectionTitle: { fontSize: 18, fontWeight: '600', marginBottom: 10 },
+  container: { flex: 1, backgroundColor: '#fff' },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 15,
+    paddingVertical: 10,
+  },
+  menuButton: { padding: 8, marginRight: 15 },
+  content: { flex: 1, flexDirection: 'row' },
+  sidebar: { backgroundColor: '#f5f5f5' },
+  sidebarContent: {
+    paddingVertical: 10,
+    alignItems: 'center',
+  },
+  categoryButton: {
+    paddingVertical: 10,
+    paddingHorizontal: 5,
+    borderRadius: 6,
+    marginVertical: 5,
+    width: '95%',
+    alignItems: 'center',
+  },
+  categoryButtonActive: { backgroundColor: '#dcdcdc' },
+  categoryText: {
+    fontSize: 10,
+    color: '#333',
+    textAlign: 'center',
+  },
+  categoryTextActive: { fontWeight: 'bold', color: '#000' },
+  products: { flex: 1, paddingHorizontal: 10 },
   grid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
+    paddingVertical: 10,
   },
   card: {
     width: '47%',
     backgroundColor: '#f9f9f9',
     borderRadius: 10,
-    marginBottom: 15,
-    overflow: 'hidden',
+    padding: 10,
+    marginBottom: 20,
     elevation: 2,
   },
-  image: {
+  productImage: {
     width: '100%',
     height: 100,
     resizeMode: 'cover',
+    borderRadius: 8,
   },
-  infoRow: {
+  productName: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    marginVertical: 8,
+  },
+  ingredientRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 10,
+    marginVertical: 4,
+    gap: 6,
   },
-  name: {
-    fontSize: 12,
+  ingredientImage: {
+    width: 24,
+    height: 24,
+    resizeMode: 'contain',
+    marginRight: 4,
+  },
+  ingredientText: {
     flex: 1,
-    flexWrap: 'wrap',
-  },
-  ingredientes: {
-    fontSize: 10,
-    color: '#555',
-    paddingHorizontal: 10,
-    paddingBottom: 10,
+    fontSize: 12,
   },
 });
