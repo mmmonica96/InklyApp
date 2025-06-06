@@ -41,6 +41,32 @@ const RECETAS: Record<
         { name: 'Base de galletas', image: require('../assets/images/ingredientes/galletas.png') },
       ],
     },
+    {
+      name: 'Tarta 3 chocolates',
+      image: require('../assets/images/tartas/3chocolates.jpg'),
+      ingredientes: [
+        { name: 'Chocolate negro', image: require('../assets/images/ingredientes/chocolate.jpg') },
+        { name: 'Chocolate con leche', image: require('../assets/images/ingredientes/chocolate-leche.png') },
+        { name: 'Chocolate blanco', image: require('../assets/images/ingredientes/chocolate-blanco.png') },
+        { name: 'Nata líquida', image: require('../assets/images/ingredientes/nata.png') },
+        { name: 'Leche', image: require('../assets/images/ingredientes/leche.jpg') },
+        { name: 'Gelatina en polvo', image: require('../assets/images/ingredientes/gelatina.png') },
+        { name: 'Base de galletas', image: require('../assets/images/ingredientes/galletas.png') },
+      ],
+    },
+    {
+      name: 'Tarta de pistacho',
+      image: require('../assets/images/tartas/pistacho.jpg'),
+      ingredientes: [
+        { name: 'Pistachos', image: require('../assets/images/ingredientes/pistachos.png') },
+        { name: 'Queso crema', image: require('../assets/images/ingredientes/queso-crema.png') },
+        { name: 'Nata', image: require('../assets/images/ingredientes/nata.png') },
+        { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
+        { name: 'Gelatina', image: require('../assets/images/ingredientes/gelatina.png') },
+        { name: 'Base de galletas', image: require('../assets/images/ingredientes/galletas.png') },
+      ],
+    },
+
   ],
   Bizcochos: [
     {
