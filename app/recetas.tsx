@@ -99,7 +99,7 @@ const RECETAS: Record<
   image: require('../assets/images/bizcochos/limon.jpg'),
   ingredientes: [
     { name: 'Yogur natural de limón', image: require('../assets/images/ingredientes/yogur.jpg') },
-    { name: 'Ralladura de limón', image: require('../assets/images/ingredientes/ralladura.jpg') },
+    { name: 'Ralladura de limón', image: require('../assets/images/ingredientes/limon.jpg') },
     { name: 'Zumo de limón', image: require('../assets/images/ingredientes/limon.jpg') },
     { name: 'Huevos', image: require('../assets/images/ingredientes/huevos.jpg') },
     { name: 'Harina', image: require('../assets/images/ingredientes/harina.jpg') },
