@@ -94,6 +94,35 @@ const RECETAS: Record<
         { name: 'Nueces', image: require('../assets/images/ingredientes/nueces.jpg') },
       ],
     },
+    {
+  name: 'Bizcocho de limon',
+  image: require('../assets/images/bizcochos/limon.jpg'),
+  ingredientes: [
+    { name: 'Yogur natural de limón', image: require('../assets/images/ingredientes/yogur.jpg') },
+    { name: 'Ralladura de limón', image: require('../assets/images/ingredientes/ralladura.jpg') },
+    { name: 'Zumo de limón', image: require('../assets/images/ingredientes/limon.jpg') },
+    { name: 'Huevos', image: require('../assets/images/ingredientes/huevos.jpg') },
+    { name: 'Harina', image: require('../assets/images/ingredientes/harina.jpg') },
+    { name: 'Azúcar blanca', image: require('../assets/images/ingredientes/azucar.jpg') },
+    { name: 'Aceite de girasol', image: require('../assets/images/ingredientes/aceite.jpg') },
+    { name: 'Levadura royal', image: require('../assets/images/ingredientes/levadura.jpg') },
+    { name: 'Sal', image: require('../assets/images/ingredientes/sal.jpg') },
+    { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.jpg') },
+  ],
+},
+{
+  name: 'Bizcocho de naranja',
+  image: require('../assets/images/bizcochos/naranja.jpg'),
+  ingredientes: [
+    { name: 'Naranja', image: require('../assets/images/ingredientes/naranja.jpg') },
+    { name: 'Levadura', image: require('../assets/images/ingredientes/levadura.jpg') },
+    { name: 'Aceite de girasol', image: require('../assets/images/ingredientes/aceite.jpg') },
+    { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.jpg') },
+    { name: 'Harina', image: require('../assets/images/ingredientes/harina.jpg') },
+    { name: 'Huevos', image: require('../assets/images/ingredientes/huevos.jpg') },
+    { name: 'Zumo de naranja', image: require('../assets/images/ingredientes/naranja.jpg') },
+  ],
+}
   ],
 };
 
