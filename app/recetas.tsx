@@ -114,7 +114,7 @@ const RECETAS: Record<
       image: require('../assets/images/bizcochos/brownie.jpg'),
       ingredientes: [
         { name: 'Chocolate', image: require('../assets/images/ingredientes/chocolate.jpg') },
-        { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.png') },
+        { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.jpg') },
         { name: 'Huevos', image: require('../assets/images/ingredientes/huevos.jpg') },
         { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
         { name: 'Harina', image: require('../assets/images/ingredientes/harina.jpg') },
@@ -134,7 +134,7 @@ const RECETAS: Record<
     { name: 'Aceite de girasol', image: require('../assets/images/ingredientes/aceite.jpg') },
     { name: 'Levadura royal', image: require('../assets/images/ingredientes/levadura.jpg') },
     { name: 'Sal', image: require('../assets/images/ingredientes/sal.jpg') },
-    { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.png') },
+    { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.jpg') },
   ],
 },
 {
@@ -168,7 +168,7 @@ const RECETAS: Record<
   ingredientes: [
     { name: 'Harina de fuerza', image: require('../assets/images/ingredientes/harina.jpg') },
     { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
-    { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.png') },
+    { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.jpg') },
     { name: 'Leche', image: require('../assets/images/ingredientes/leche.jpg') },
     { name: 'Levadura', image: require('../assets/images/ingredientes/levadura.jpg') },
      { name: 'Huevo', image: require('../assets/images/ingredientes/huevos.jpg') },
