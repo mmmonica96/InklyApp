@@ -114,7 +114,7 @@ const RECETAS: Record<
       image: require('../assets/images/bizcochos/brownie.jpg'),
       ingredientes: [
         { name: 'Chocolate', image: require('../assets/images/ingredientes/chocolate.jpg') },
-        { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.jpg') },
+        { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.png') },
         { name: 'Huevos', image: require('../assets/images/ingredientes/huevos.jpg') },
         { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
         { name: 'Harina', image: require('../assets/images/ingredientes/harina.jpg') },
@@ -127,13 +127,14 @@ const RECETAS: Record<
   ingredientes: [
     { name: 'Yogur natural de limón', image: require('../assets/images/ingredientes/yogur.jpg') },
     { name: 'Limón', image: require('../assets/images/ingredientes/limon.jpg') },
+    { name: 'Zumo de limón', image: require('../assets/images/ingredientes/limon.jpg') },
     { name: 'Huevos', image: require('../assets/images/ingredientes/huevos.jpg') },
     { name: 'Harina', image: require('../assets/images/ingredientes/harina.jpg') },
     { name: 'Azúcar blanca', image: require('../assets/images/ingredientes/azucar.png') },
     { name: 'Aceite de girasol', image: require('../assets/images/ingredientes/aceite.jpg') },
     { name: 'Levadura royal', image: require('../assets/images/ingredientes/levadura.jpg') },
     { name: 'Sal', image: require('../assets/images/ingredientes/sal.jpg') },
-    { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.jpg') },
+    { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.png') },
   ],
 },
 {
@@ -148,8 +149,33 @@ const RECETAS: Record<
     { name: 'Huevos', image: require('../assets/images/ingredientes/huevos.jpg') },
     { name: 'Zumo de naranja', image: require('../assets/images/ingredientes/naranja.jpg') },
   ],
-}
+},
+  {
+  name: 'Magdalenas',
+  image: require('../assets/images/bizcochos/magdalenas.jpg'),
+  ingredientes: [
+    { name: 'Huevos', image: require('../assets/images/ingredientes/huevos.jpg') },
+    { name: 'Harina', image: require('../assets/images/ingredientes/harina.jpg') },
+    { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
+    { name: 'Leche', image: require('../assets/images/ingredientes/leche.jpg') },
+    { name: 'Aceite de oliva', image: require('../assets/images/ingredientes/aceite.jpg') },
+    { name: 'Levadura', image: require('../assets/images/ingredientes/levadura.jpg') },
   ],
+},
+{
+  name: 'Donuts',
+  image: require('../assets/images/bizcochos/donuts.jpg'),
+  ingredientes: [
+    { name: 'Harina de fuerza', image: require('../assets/images/ingredientes/harina.jpg') },
+    { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
+    { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.png') },
+    { name: 'Leche', image: require('../assets/images/ingredientes/leche.jpg') },
+    { name: 'Levadura', image: require('../assets/images/ingredientes/levadura.jpg') },
+     { name: 'Huevo', image: require('../assets/images/ingredientes/huevos.jpg') },
+  ],
+}
+
+ ],
 };
 
 export default function RecetasScreen() {
