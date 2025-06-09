@@ -66,6 +66,33 @@ const RECETAS: Record<
         { name: 'Base de galletas', image: require('../assets/images/ingredientes/galletas.png') },
       ],
     },
+    {
+  name: 'Muerte por chocolate',
+  image: require('../assets/images/tartas/muerte-chocolate.jpg'),
+  ingredientes: [
+    { name: 'Chocolate negro', image: require('../assets/images/ingredientes/chocolate.jpg') },
+    { name: 'Cacao en polvo', image: require('../assets/images/ingredientes/cacao.jpg') },
+    { name: 'Harina', image: require('../assets/images/ingredientes/harina.jpg') },
+    { name: 'Huevos', image: require('../assets/images/ingredientes/huevos.jpg') },
+    { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
+    { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.jpg') },
+    { name: 'Nata líquida', image: require('../assets/images/ingredientes/nata.png') },
+  ],
+},
+{
+  name: 'Red velvet',
+  image: require('../assets/images/tartas/red-velvet.jpg'),
+  ingredientes: [
+    { name: 'Harina', image: require('../assets/images/ingredientes/harina.jpg') },
+    { name: 'Cacao en polvo', image: require('../assets/images/ingredientes/cacao.jpg') },
+    { name: 'Huevos', image: require('../assets/images/ingredientes/huevos.jpg') },
+    { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
+    { name: 'Buttermilk', image: require('../assets/images/ingredientes/suero-mantequilla.png') },
+    { name: 'Colorante rojo', image: require('../assets/images/ingredientes/colorante-rojo.png') },
+    { name: 'Queso crema', image: require('../assets/images/ingredientes/queso-crema.png') },
+    { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.jpg') },
+  ],
+}
 
   ],
   Bizcochos: [
