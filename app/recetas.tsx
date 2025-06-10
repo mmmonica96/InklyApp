@@ -145,8 +145,31 @@ const RECETAS: Record<
     { name: 'Levadura', image: require('../assets/images/ingredientes/levadura.jpg') },
      { name: 'Huevo', image: require('../assets/images/ingredientes/huevos.jpg') },
   ],
+},
+{
+  name: 'Red Velvet',
+  image: require('../assets/images/bizcochos/redVelvet.jpg'),
+  ingredientes: [
+    { name: 'Harina de fuerza', image: require('../assets/images/ingredientes/harina.jpg') },
+    { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
+    { name: 'Huevo', image: require('../assets/images/ingredientes/huevo.jpg') },
+    { name: 'Leche', image: require('../assets/images/ingredientes/leche.jpg') },
+    { name: 'Cacao en polvo', image: require('../assets/images/ingredientes/cacao.jpg') },
+     { name: 'Colorante alimentario en gel rojo', image: require('../assets/images/ingredientes/colorante.jpg') },
+  ],
+},
+{
+  name: 'Carrot Cake',
+  image: require('../assets/images/bizcochos/carrot.jpg'),
+  ingredientes: [
+    { name: 'Harina de fuerza', image: require('../assets/images/ingredientes/harina.jpg') },
+    { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
+    { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.png') },
+    { name: 'Leche', image: require('../assets/images/ingredientes/leche.jpg') },
+    { name: 'Levadura', image: require('../assets/images/ingredientes/levadura.jpg') },
+     { name: 'Huevo', image: require('../assets/images/ingredientes/huevos.jpg') },
+  ],
 }
-
  ],
 };
 
