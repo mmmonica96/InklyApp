@@ -173,8 +173,30 @@ const RECETAS: Record<
     { name: 'Levadura', image: require('../assets/images/ingredientes/levadura.jpg') },
      { name: 'Huevo', image: require('../assets/images/ingredientes/huevos.jpg') },
   ],
+},
+{
+  name: 'Bizcocho de plátano',
+  image: require('../assets/images/bizcochos/platano.jpg'),
+  ingredientes: [
+    { name: 'Plátanos', image: require('../assets/images/ingredientes/platano.jpg') }, 
+    { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
+    { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.jpg') },
+    { name: 'Harina', image: require('../assets/images/ingredientes/harina.jpg') },
+    { name: 'Levadura', image: require('../assets/images/ingredientes/lectura.jpg') }
+  ],
+},
+{
+  name: 'Bizcocho de calabaza',
+  image: require('../assets/images/bizcochos/calabaza.jpeg'),
+  ingredientes: [
+    { name: 'Harina', image: require('../assets/images/ingredientes/harina.jpg') },
+    { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
+    { name: 'Calabaza', image: require('../assets/images/ingredientes/calabaza.jpg') },
+    { name: 'Leche', image: require('../assets/images/ingredientes/leche.jpg') },
+    { name: 'Huevo', image: require('../assets/images/ingredientes/huevos.jpg') },
+    { name: 'Levadura', image: require('../assets/images/ingredientes/levadura.jpg') }    
+  ],
 }
-
  ],
 };
 
