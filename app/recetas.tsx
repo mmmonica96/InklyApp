@@ -67,33 +67,26 @@ const RECETAS: Record<
       ],
     },
     {
-  name: 'Muerte por chocolate',
-  image: require('../assets/images/tartas/muerte-chocolate.jpg'),
-  ingredientes: [
-    { name: 'Chocolate negro', image: require('../assets/images/ingredientes/chocolate.jpg') },
-    { name: 'Cacao en polvo', image: require('../assets/images/ingredientes/cacao.jpg') },
-    { name: 'Harina', image: require('../assets/images/ingredientes/harina.jpg') },
-    { name: 'Huevos', image: require('../assets/images/ingredientes/huevos.jpg') },
-    { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
-    { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.jpg') },
-    { name: 'Nata líquida', image: require('../assets/images/ingredientes/nata.png') },
-  ],
-},
-{
-  name: 'Red velvet',
-  image: require('../assets/images/tartas/red-velvet.jpg'),
-  ingredientes: [
-    { name: 'Harina', image: require('../assets/images/ingredientes/harina.jpg') },
-    { name: 'Cacao en polvo', image: require('../assets/images/ingredientes/cacao.jpg') },
-    { name: 'Huevos', image: require('../assets/images/ingredientes/huevos.jpg') },
-    { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
-    { name: 'Buttermilk', image: require('../assets/images/ingredientes/suero-mantequilla.png') },
-    { name: 'Colorante rojo', image: require('../assets/images/ingredientes/colorante-rojo.png') },
-    { name: 'Queso crema', image: require('../assets/images/ingredientes/queso-crema.png') },
-    { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.jpg') },
-  ],
-}
-
+      name: 'Selva negra',
+      image: require('../assets/images/tartas/selva-negra.jpg'),
+      ingredientes: [
+        { name: 'Cereza', image: require('../assets/images/ingredientes/cereza.png') }, 
+        { name: 'Chocolate negro', image: require('../assets/images/ingredientes/chocolate.jpg') }, 
+        { name: 'Nata montada', image: require('../assets/images/ingredientes/nata.png') }, 
+        { name: 'Licor de cereza', image: require('../assets/images/ingredientes/licor-cereza.png') },
+      ],
+    },
+    {
+      name: 'Tarta de Kinder Bueno',
+      image: require('../assets/images/tartas/kinder-bueno.jpg'),
+      ingredientes: [
+        { name: 'Kinder Bueno', image: require('../assets/images/ingredientes/kinder-bueno.png') }, 
+        { name: 'Crema de chocolate', image: require('../assets/images/ingredientes/crema-chocolate.png') }, 
+        { name: 'Nata líquida', image: require('../assets/images/ingredientes/nata.png') }, 
+        { name: 'Chocolate con leche', image: require('../assets/images/ingredientes/chocolate-leche.png') },
+      ],
+    },
+    
   ],
   Bizcochos: [
     {
@@ -126,7 +119,6 @@ const RECETAS: Record<
   image: require('../assets/images/bizcochos/limon.jpg'),
   ingredientes: [
     { name: 'Yogur natural de limón', image: require('../assets/images/ingredientes/yogur.jpg') },
-    { name: 'Limón', image: require('../assets/images/ingredientes/limon.jpg') },
     { name: 'Zumo de limón', image: require('../assets/images/ingredientes/limon.jpg') },
     { name: 'Huevos', image: require('../assets/images/ingredientes/huevos.jpg') },
     { name: 'Harina', image: require('../assets/images/ingredientes/harina.jpg') },
@@ -182,7 +174,7 @@ const RECETAS: Record<
     { name: 'Azúcar', image: require('../assets/images/ingredientes/azucar.png') },
     { name: 'Mantequilla', image: require('../assets/images/ingredientes/mantequilla.jpg') },
     { name: 'Harina', image: require('../assets/images/ingredientes/harina.jpg') },
-    { name: 'Levadura', image: require('../assets/images/ingredientes/lectura.jpg') }
+    { name: 'Levadura', image: require('../assets/images/ingredientes/levadura.jpg') }
   ],
 },
 {
